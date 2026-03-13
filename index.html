@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_blank" />
+  <script>
+    // Security best practice for target=_blank links
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[target="_blank"]').forEach(a => {
+        const rel = (a.getAttribute('rel') || '').toLowerCase();
+        if (!rel.includes('noopener')) a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer');
+      });
+    });
+  </script>
+  <meta name="description"
+    content="Hardik Wahi - Web Designer and Developer based in India, specializing in modern, responsive websites and full-stack applications.">
+  <title>HMW7 | Hardik Wahi</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/faq.css" />
+  <link rel="stylesheet" href="css/terminal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <script src="js/favicon.js" defer></script>
+</head>
+
+<body id="top">
+
+  <nav class="reveal-load">
+    <a href="#top" class="nav-logo"><span class="logo-metallic">HMW7</span></a>
+    <div class="nav-toggle" id="navToggle" aria-label="Open Menu" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#top" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact" style="text-decoration:none;">Get a Quote</a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="videos/background.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="tcontainer reveal-load">
+      <div class="maincontainerhero">
+        <div class="text-container">
+          <div class="tungtungtungtungtungsahur reveal-load delay-100">
+            <div class="badge">
+              <span class="badge-icon">⚙️</span>
+              Web Designer and Developer
+            </div>
+          </div>
+          <div class="trallalero-tralllala">
+            <h1 class="hero-text1 reveal-load delay-100">Hardik <span
+                class="hero-text2 reveal-load delay-200">Wahi</span></h1>
+            <div class="about-button-container reveal-load delay-300">
+              <button class="about-button">
+                <span class="arrow">➜</span>
+                <span class="label">About Me</span>
+              </button>
+            </div>
+          </div>
+          <div class="ballerina-capuchina reveal-load delay-400">
+            I’m a web designer and developer crafting modern, responsive sites.<br>
+            From portfolios to web apps, I craft smooth, engaging digital experiences.
+          </div>
+          <div class="buttonsahurballerina reveal-load delay-500">
+            <a href="projects.html" class="buttonsahur1" style="text-decoration:none;color:white;">See All Projects</a>
+            <a href="#contact" class="buttonsahur2" style="text-decoration:none;color:inherit;">Contact Now</a>
+          </div>
+        </div>
+        <div class="imgholder reveal-load delay-300"
+          style="width: 100%; max-width: 350px; height: auto; aspect-ratio: 1; border-radius: 0; border: none; overflow: visible; background: transparent; box-shadow: none;">
+          <div class="computer-container" onclick="openTerminal()">
+            <div id="lottie-container" style="display:none;"></div>
+            <div class="computer">
+              <div class="screen">
+                <canvas class="screen-canvas"></canvas>
+                <div class="monitor-logs" id="monitor-logs"></div>
+                <div class="screen-grid"></div>
+                <div class="screen-overlay-glow"></div>
+                <div class="glitch-flash"></div>
+                <div class="glitch-overlay"></div>
+              </div>
+              <div class="computer-bottom-bar">
+                <div class="power-led"></div>
+              </div>
+              <div class="computer-stand"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="thebestprojects" id="projects">
+    <div class="project-grid reveal reveal-up" id="hero-projects-grid">
+      <!-- Dynamically loaded from Supabase -->
+    </div>
+  </div>
+
+  <div class="section-bg">
+    <div class="aboutcontainer">
+      <div class="aboutcontainerr">
+        <div class="containerinacontainer">
+          <div class="badgecont reveal reveal-up delay-100">
+            <div class="badge">
+              <span class="badge-icon">⚙️</span>
+              Craftsman of Code & Design
+            </div>
+          </div>
+          <div class="headingovr">
+            <div class="herotext11">Hardik Wahi,</div>
+            <div class="herotext21">
+              <span class="typed-text"></span><span class="type-cursor">|</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hicontainer">
+        <div class="hi1 reveal reveal-left delay-100">
+          <div class="about-photo">
+            <img src="images/image copy.png" class="myself" alt="Portrait">
+            <div class="availability-badge">
+              <span class="dot" id="dot"></span>
+              <span id="status-text">Available for work</span>
+            </div>
+          </div>
+          <h1 class="name-heading reveal reveal-up delay-100">Hello, I am Hardik Wahi</h1>
+          <h1 class="name-subheading reveal reveal-up delay-200">Full-Stack Web Developer Based in India</h1>
+          <div class="allcontainer">
+
+            <div class="social-links reveal reveal-up delay-400">
+              <a href="https://x.com/HardikWahi07" class="social-btn" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+
+              <a href="https://www.instagram.com/hwahi07/" class="social-btn" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a href="https://github.com/HardikWahi07" class="social-btn" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+
+              <a href="https://www.linkedin.com/in/hardikwahi/" class="social-btn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+
+            <div class="contact-cta reveal reveal-up delay-500">
+              <span class="divider"></span>
+
+              <a href="mailto:hwahi2178@gmail.com" class="connect-btn">
+                Connect with me
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="hi2 reveal reveal-right delay-200">
+          <div class="content1">
+            <div class="paratext reveal reveal-up delay-300">I'm Hardik Wahi, a passionate web designer and developer
+              from
+              India. I create visually
+              appealing and well-functioning websites, including stylish portfolios and fully responsive web
+              applications. I focus on merging design accuracy with practical elegance to provide unique digital
+              experiences.</div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="section-divider"></div>
+          <div class="skills-container reveal reveal-up reveal-recurring delay-400">
+            <span class="skill-tag reveal reveal-up reveal-recurring delay-100">Next.js (React)</span>
+            <span class="skill-tag reveal reveal-up reveal-recurring delay-200">Node.js + REST APIs</span>
+            <span class="skill-tag reveal reveal-up reveal-recurring delay-300">PostgreSQL</span>
+            <span class="skill-tag reveal reveal-up reveal-recurring delay-400">MongoDB</span>
+            <span class="skill-tag reveal reveal-up reveal-recurring delay-500">Tailwind CSS</span>
+            <span class="skill-tag reveal reveal-up reveal-recurring delay-600">Vercel / Netlify</span>
+          </div>
+          <div class="section-divider"></div>
+          <div class="accordion reveal reveal-up reveal-recurring delay-500">
+            <div class="accordion-item active" data-index="0">
+              <div class="accordion-header"><span class="header-emoji"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></span> Frontend Development</div>
+              <div class="accordion-bar">
+                <div class="bar-fill"></div>
+              </div>
+              <div class="accordion-content">
+                <div class="skillcont">
+                  <div class="items_square reveal reveal-up reveal-recurring delay-100">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/html5.svg" alt="HTML">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">HTML 5</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-200">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/css.svg" alt="CSS">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">CSS</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-300">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/javascript.svg" alt="Javascript">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">Javascript</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-400">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/react.svg" alt="React">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">React</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-500">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/tailwindcss.svg" alt="Tailwind CSS">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">Tailwind CSS</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-600">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/nextdotjs.svg" alt="Next.js">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">Next.js</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-index="1">
+              <div class="accordion-header"><span class="header-emoji"><i class="fa-solid fa-server" aria-hidden="true"></i></span> Backend Development</div>
+              <div class="accordion-bar">
+                <div class="bar-fill"></div>
+              </div>
+              <div class="accordion-content">
+                <div class="skillcont">
+                  <div class="items_square reveal reveal-up reveal-recurring delay-100">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <i class="fa-brands fa-node-js" aria-hidden="true"></i>
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">Node.js</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-200">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <i class="fa-solid fa-plug" aria-hidden="true"></i>
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">REST APIs</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-400">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/postgresql.svg" alt="postgresql">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">PostgreSQL</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-500">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/mongodb.svg" alt="mongodb">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">MongoDB</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-index="2">
+              <div class="accordion-header"><span class="header-emoji"><i class="fa-solid fa-swatchbook" aria-hidden="true"></i></span> Tooling &amp; Workflow</div>
+              <div class="accordion-bar">
+                <div class="bar-fill"></div>
+              </div>
+              <div class="accordion-content">
+                <div class="skillcont">
+                  <div class="items_square reveal reveal-up reveal-recurring delay-100">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/figma.svg" alt="Figma">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">Figma</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-200">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">GitHub</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-300">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/notion.svg" alt="notion">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">Notion</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="items_square reveal reveal-up reveal-recurring delay-400">
+                    <div class="item_squares">
+                      <div class="skill-logo">
+                        <img src="images/lottiefiles.svg" alt="Lottie Files">
+                      </div>
+                      <div class="txtcontainer">
+                        <div class="text">Lottie Files</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="process">
+      <section class="process-modern">
+        <h3 class="section-tag reveal reveal-up">🚧 Workflow</h3>
+        <h2 class="section-heading reveal reveal-up delay-100"><span>My</span> Full-Stack Process</h2>
+        <p class="section-desc reveal reveal-up delay-200">Here’s how I take your idea from scratch to a pixel-perfect,
+          scalable web experience.
+        </p>
+
+        <div class="timeline reveal reveal-up">
+          <div class="timeline-block reveal reveal-left">
+            <div class="timeline-content">
+              <div class="timeline-icon">🤝</div>
+              <h3>Discovery Call</h3>
+              <p>We jump on a call or chat to understand your needs, vibe, goals, and problems.</p>
+              <span class="step-num">Step 1</span>
+            </div>
+          </div>
+
+          <div class="timeline-block reveal reveal-right">
+            <div class="timeline-content">
+              <div class="timeline-icon">🧠</div>
+              <h3>Ideate & Design</h3>
+              <p>I sketch the wireframes, plan user flows, and create a stunning interface.</p>
+              <span class="step-num">Step 2</span>
+            </div>
+          </div>
+
+          <div class="timeline-block reveal reveal-left">
+            <div class="timeline-content">
+              <div class="timeline-icon">🧑‍💻</div>
+              <h3>Full Stack Dev</h3>
+              <p>Frontend meets backend magic. Clean code. Modular. Performant. Fully responsive.</p>
+              <span class="step-num">Step 3</span>
+            </div>
+          </div>
+
+          <div class="timeline-block reveal reveal-right">
+            <div class="timeline-content">
+              <div class="timeline-icon">🚀</div>
+              <h3>Deploy & Deliver</h3>
+              <p>I ship it live, hand over assets, onboard you with docs, and provide support if needed.</p>
+              <span class="step-num">Step 4</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Featured Projects Section -->
+    <div class="featured-projects-section">
+      <div class="featured-projects-header reveal reveal-up">
+        <div class="badge">
+          <span class="badge-icon">🚀</span>
+          Featured Work
+        </div>
+        <h2 class="featured-projects-title">Selected <span class="text-muted-project">Projects</span></h2>
+        <p class="featured-projects-desc">A curated showcase of my best work across web design, development, and UI/UX.
+        </p>
+      </div>
+
+      <div class="project-grid reveal reveal-up" style="margin-top: 40px;" id="featured-projects-grid">
+        <!-- Dynamically loaded from Supabase -->
+      </div>
+
+      <div class="featured-projects-cta reveal reveal-up delay-500">
+        <a href="projects.html" class="view-all-projects-btn">
+          View All Projects
+          <span class="btn-arrow">➜</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+      <div class="services-header reveal reveal-up">
+        <div class="badge">
+          <span class="badge-icon"><i class="fa-solid fa-bolt"></i></span>
+          Services
+        </div>
+        <h2 class="services-title">What I <span class="text-muted-project">Build</span></h2>
+        <p class="services-desc">Clear, fast websites and production-ready web apps, designed well and built to scale.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal reveal-up delay-100">
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 class="service-title">Landing Pages</h3>
+          <p class="service-desc">Conversion-focused pages with strong hierarchy, smooth motion, and mobile-first performance.</p>
+          <ul class="service-points">
+            <li>Responsive, accessible UI</li>
+            <li>SEO-friendly structure</li>
+            <li>Core Web Vitals</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal reveal-up delay-200">
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-id-card"></i></div>
+          <h3 class="service-title">Personal Brand Websites</h3>
+          <p class="service-desc">A premium personal site that showcases your work, credibility, and contact flow.</p>
+          <ul class="service-points">
+            <li>Projects + case studies</li>
+            <li>Clean animations</li>
+            <li>Netlify / Vercel deploy</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal reveal-up delay-300">
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
+          <h3 class="service-title">Full-Stack Web Apps</h3>
+          <p class="service-desc">Production-ready web apps with authentication, databases, APIs, and scalable architecture.</p>
+          <ul class="service-points">
+            <li>Auth + dashboards</li>
+            <li>MongoDB / PostgreSQL</li>
+            <li>REST APIs</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal reveal-up delay-400">
+          <div class="service-icon" aria-hidden="true"><i class="fa-brands fa-figma"></i></div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">Clean, intuitive interfaces designed for usability, then translated into pixel-perfect front-end code.</p>
+          <ul class="service-points">
+            <li>Wireframes + user flows</li>
+            <li>Figma components</li>
+            <li>Design-to-dev execution</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal reveal-up delay-500">
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-plug"></i></div>
+          <h3 class="service-title">API & Backend Integration</h3>
+          <p class="service-desc">Connect your app to the services you need, with clean data flow and error handling.</p>
+          <ul class="service-points">
+            <li>REST APIs + integrations</li>
+            <li>Auth + email flows</li>
+            <li>Validation + error handling</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal reveal-up delay-600">
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3 class="service-title">Performance & Maintenance</h3>
+          <p class="service-desc">Speed, stability, and ongoing improvements so your site stays sharp over time.</p>
+          <ul class="service-points">
+            <li>Perf audits + fixes</li>
+            <li>Bug fixes + enhancements</li>
+            <li>Content + UI updates</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="services-actions reveal reveal-up delay-700">
+        <a href="#contact" class="btn-primary" style="text-decoration:none;">Get a Quote</a>
+        <a href="projects.html" class="btn-secondary" style="text-decoration:none;">See Work</a>
+      </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section class="why-section" id="why-choose-me">
+      <div class="why2-shell">
+        <div class="why2-left reveal reveal-up">
+          <div class="badge">
+            <span class="badge-icon"><i class="fa-solid fa-circle-question"></i></span>
+            Why Choose Me
+          </div>
+
+          <h2 class="why2-title">A partner who <span class="text-muted-project">ships</span></h2>
+          <p class="why2-desc">
+            Design-minded development with clean code and clear communication. You get a site/app that looks premium,
+            feels fast, and stays maintainable.
+          </p>
+
+          <ul class="why2-points" aria-label="What you can expect">
+            <li><i class="fa-solid fa-check"></i><span>Pixel-tight UI and responsive layouts</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Performance, SEO basics, and accessibility</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Updates you can follow: scope, timeline, next steps</span></li>
+          </ul>
+
+          <div class="why2-progress" aria-hidden="true">
+            <div class="why2-track"><span class="why2-fill"></span></div>
+            <div class="why2-steps" data-why2-steps>
+              <button class="why2-step" type="button" data-why2-step="0">Craft</button>
+              <button class="why2-step" type="button" data-why2-step="1">Code</button>
+              <button class="why2-step" type="button" data-why2-step="2">Speed</button>
+              <button class="why2-step" type="button" data-why2-step="3">Communication</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="why2-right" data-why2>
+          <article class="why2-card reveal reveal-up" data-why2-card>
+            <div class="why2-card-head">
+              <div class="why2-chip">01</div>
+              <h3 class="why2-card-title">Craft that feels expensive</h3>
+            </div>
+            <p class="why2-card-desc">Strong typography, spacing, and motion that makes your brand feel trustworthy.</p>
+            <div class="why2-tags">
+              <span class="why2-tag">Layout systems</span>
+              <span class="why2-tag">Micro-interactions</span>
+              <span class="why2-tag">Design consistency</span>
+            </div>
+          </article>
+
+          <article class="why2-card reveal reveal-up delay-100" data-why2-card>
+            <div class="why2-card-head">
+              <div class="why2-chip">02</div>
+              <h3 class="why2-card-title">Code that stays clean</h3>
+            </div>
+            <p class="why2-card-desc">Maintainable components and structure so features are easy to add later.</p>
+            <div class="why2-tags">
+              <span class="why2-tag">Reusable components</span>
+              <span class="why2-tag">Readable structure</span>
+              <span class="why2-tag">Documentation</span>
+            </div>
+          </article>
+
+          <article class="why2-card reveal reveal-up delay-200" data-why2-card>
+            <div class="why2-card-head">
+              <div class="why2-chip">03</div>
+              <h3 class="why2-card-title">Fast, mobile-first delivery</h3>
+            </div>
+            <p class="why2-card-desc">Optimized images, smooth interactions, and no layout breaking on small screens.</p>
+            <div class="why2-tags">
+              <span class="why2-tag">Performance</span>
+              <span class="why2-tag">Responsive UI</span>
+              <span class="why2-tag">Core Web Vitals</span>
+            </div>
+          </article>
+
+          <article class="why2-card reveal reveal-up delay-300" data-why2-card>
+            <div class="why2-card-head">
+              <div class="why2-chip">04</div>
+              <h3 class="why2-card-title">Clear communication</h3>
+            </div>
+            <p class="why2-card-desc">No ghosting. You get quick check-ins, clear scope, and honest tradeoffs.</p>
+            <div class="why2-tags">
+              <span class="why2-tag">Weekly updates</span>
+              <span class="why2-tag">Transparent scope</span>
+              <span class="why2-tag">Handoff ready</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <div class="faq-container reveal reveal-up">
+
+        <!-- Left Column: Content & Testimonial -->
+        <div class="faq-content-left reveal reveal-left delay-100">
+          <div class="faq-badge">@ FAQ Section</div>
+          <h2 class="faq-heading">Questions, <span class="text-muted">Answers</span></h2>
+          <p class="faq-subheading">Get quick answers to your most pressing questions</p>
+
+          <div class="faq-actions">
+            <a href="projects.html" class="btn-secondary" style="text-decoration:none;">See All Projects</a>
+            <a href="mailto:hwahi2178@gmail.com" class="btn-primary" style="text-decoration:none;">Contact Now</a>
+          </div>
+        </div>
+
+        <!-- Right Column: FAQ Items -->
+        <div class="faq-content-right">
+          <div class="faq-item reveal reveal-up delay-100">
+            <button class="faq-question">
+              <span>What services do you offer?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Landing pages, personal brand websites, full-stack web apps, API integrations, and performance
+                improvements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-up delay-200">
+            <button class="faq-question">
+              <span>What does your process look like?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Discovery, design (or UI polish), development, QA, and launch. You get updates throughout with clear
+                milestones.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-up delay-300">
+            <button class="faq-question">
+              <span>What tech stack do you use?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Next.js (React), Tailwind CSS, Node.js REST APIs, and a database like PostgreSQL or MongoDB. I typically
+                deploy on Vercel or Netlify, and design in Figma.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-up delay-400">
+            <button class="faq-question">
+              <span>How long does a project take?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Depends on scope. A landing page is usually 1-2 weeks, a brand website 2-4 weeks, and a web app 6-10
+                weeks.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-up delay-500">
+            <button class="faq-question">
+              <span>Will it be mobile-friendly and fast?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. I build responsive layouts and optimize for performance (Core Web Vitals, image optimization, and
+                clean structure).</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-up delay-600">
+            <button class="faq-question">
+              <span>Do you provide revisions and support?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We iterate on design and key screens, and I can provide post-launch maintenance and updates if you
+                need ongoing support.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-up delay-700">
+            <button class="faq-question">
+              <span>How do we start, and what do you need from me?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Message me with your goal, features, timeline, and examples you like. If you have content (text/images),
+                that helps us move faster.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-up delay-800">
+            <button class="faq-question">
+              <span>What is your pricing structure?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Usually fixed-price per project. After a quick scope call/message, I’ll share a clear quote and timeline.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Contact Section (Final) -->
+    <section class="contact-final" id="contact">
+  <div class="contact-final-inner">
+    <div class="contact-final-left reveal reveal-up">
+      <div class="badge">
+        <span class="badge-icon"><i class="fa-solid fa-paper-plane"></i></span>
+        Contact
+      </div>
+
+      <h2 class="contact-final-title">Let's build something <span class="text-muted-project">clean</span></h2>
+      <p class="contact-final-desc">
+        Drop the details below and I'll reply with next steps and a clear plan. If you're in a rush, email works too.
+      </p>
+
+      <div class="contact-final-mini">
+        <div class="contact-mini-item">
+          <div class="contact-mini-k">Response</div>
+          <div class="contact-mini-v">Fast replies</div>
+        </div>
+        <div class="contact-mini-item">
+          <div class="contact-mini-k">Work</div>
+          <div class="contact-mini-v">Websites + apps</div>
+        </div>
+        <div class="contact-mini-item">
+          <div class="contact-mini-k">Delivery</div>
+          <div class="contact-mini-v">Mobile-first</div>
+        </div>
+      </div>
+
+      <div class="contact-final-direct">
+        <div class="contact-card-row contact-card-row-compact">
+          <div class="contact-card-label">Email</div>
+          <a class="contact-card-value" href="mailto:hwahi2178@gmail.com">hwahi2178@gmail.com</a>
+          <button class="contact-copy" type="button" data-copy="hwahi2178@gmail.com" aria-label="Copy email">
+            <i class="fa-regular fa-copy" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="contact-direct-actions">
+          <a class="btn-secondary contact-card-cta" href="projects.html" style="text-decoration:none;">See Work</a>
+          <a class="btn-primary contact-card-cta" href="mailto:hwahi2178@gmail.com?subject=Project%20Inquiry%20-%20Hardik%20Wahi" style="text-decoration:none;">Email Me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-final-card reveal reveal-up delay-200">
+      <div class="contact-card-top">
+        <div class="contact-card-title">Start a project</div>
+        <div class="contact-card-sub">Send the details and I'll reply with next steps.</div>
+      </div>
+
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xaqpjjyq" method="POST" autocomplete="on">
+        <input type="hidden" name="_subject" value="New portfolio inquiry (HMW7)">
+        <div class="contact-grid">
+          <label class="contact-field">
+            <span class="contact-label">Your name</span>
+            <input class="contact-input" type="text" name="name" placeholder="Hardik Wahi" required>
+          </label>
+
+          <label class="contact-field">
+            <span class="contact-label">Email</span>
+            <input class="contact-input" type="email" name="email" placeholder="you@domain.com" required>
+          </label>
+
+          <label class="contact-field">
+            <span class="contact-label">Service</span>
+            <select class="contact-input" name="service" required>
+              <option value="" selected disabled>Select a service</option>
+              <option value="Landing Page">Landing page</option>
+              <option value="Brand Website">Brand/personal website</option>
+              <option value="Full-Stack App">Full-stack web app</option>
+              <option value="API Integration">API/backend integration</option>
+              <option value="Performance Fixes">Performance & fixes</option>
+            </select>
+          </label>
+
+          <label class="contact-field">
+            <span class="contact-label">Timeline</span>
+            <select class="contact-input" name="timeline" required>
+              <option value="" selected disabled>When do you need it?</option>
+              <option value="ASAP">ASAP</option>
+              <option value="1-2 weeks">1-2 weeks</option>
+              <option value="2-4 weeks">2-4 weeks</option>
+              <option value="1-2 months">1-2 months</option>
+              <option value="Flexible">Flexible</option>
+            </select>
+          </label>
+
+          <label class="contact-field contact-field-full">
+            <span class="contact-label">Budget</span>
+            <select class="contact-input" name="budget">
+              <option value="" selected disabled>Select a range (optional)</option>
+              <option value="Under $500">Under $500</option>
+              <option value="$500 - $1k">$500 - $1k</option>
+              <option value="$1k - $3k">$1k - $3k</option>
+              <option value="$3k+">$3k+</option>
+            </select>
+          </label>
+
+          <label class="contact-field contact-field-full">
+            <span class="contact-label">Project details</span>
+            <textarea class="contact-input contact-textarea" name="message" rows="6" placeholder="What are you building? Links, references, must-have features..." required></textarea>
+          </label>
+
+          <!-- Formspree honeypot -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="contact-hp">
+        </div>
+
+        <div class="contact-form-actions">
+          <button class="btn-primary contact-submit" type="submit">Send Message</button>
+          <div class="contact-note">Or email me directly: <a href="mailto:hwahi2178@gmail.com">hwahi2178@gmail.com</a></div>
+        </div>
+      </form>
+
+      <div class="contact-card-divider"></div>
+
+      <div class="contact-card-social">
+        <div class="contact-social-label">Elsewhere</div>
+        <div class="contact-social-buttons">
+          <a href="https://x.com/HardikWahi07" class="social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hwahi07/" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/HardikWahi07" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/hardikwahi/" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-toast" aria-live="polite" aria-atomic="true"></div>
+    </div>
+  </div>
+</section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo"><span class="logo-metallic">HMW7</span></div>
+          <p class="footer-desc">Modern, responsive websites and full-stack web apps built with clean UI and fast performance.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-title">Pages</div>
+            <a href="#top" class="footer-link">Home</a>
+            <a href="#services" class="footer-link">Services</a>
+            <a href="projects.html" class="footer-link">Projects</a>
+            <a href="#contact" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-title">Contact</div>
+            <a href="mailto:hwahi2178@gmail.com" class="footer-link">hwahi2178@gmail.com</a>
+            <a href="#contact" class="footer-link">Start a project</a>
+            <a href="projects.html" class="footer-link">View work</a>
+          </div>
+        </div>
+
+        <div class="footer-social">
+          <div class="footer-title">Elsewhere</div>
+          <div class="footer-social-row">
+            <a href="https://github.com/HardikWahi07" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/hardikwahi/" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/HardikWahi07" class="social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/hwahi07/" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div class="footer-meta">© <span data-footer-year></span> HMW7. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Custom cursor -->
+    <div class="circle">
+      <div class="circle-text">View Project</div>
+    </div>
+
+    <script src="https://unpkg.com/lottie-web@5.7.4/build/player/lottie.min.js"></script>
+    <script>
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+        });
+
+        // Close when clicking a link
+        navLinks.querySelectorAll('a, button').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+          });
+        });
+
+        // Close when clicking outside
+        window.addEventListener("click", (e) => {
+          if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove("open");
+          }
+        });
+      }
+
+      const circle = document.querySelector(".circle");
+      const cursorEnabled = !!(window.matchMedia && window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 1025px)').matches);
+
+      if (circle && cursorEnabled) {
+        let mouseX = 0, mouseY = 0;
+        let dotX = 0, dotY = 0;
+
+        window.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animate() {
+          dotX += (mouseX - dotX) * 0.15;
+          dotY += (mouseY - dotY) * 0.15;
+          circle.style.left = dotX + "px";
+          circle.style.top = dotY + "px";
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      } else if (circle) {
+        circle.style.display = 'none';
+      }
+
+      // Note: Tile hover effects are now handled in js/load-projects.js to support dynamic content.
+
+      const lottieContainer = document.getElementById('lottie-container');
+      if (lottieContainer) {
+        lottie.loadAnimation({
+          container: lottieContainer,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: 'animations/animation.json'
+        });
+      }
+
+      const textArray = [
+        "UI/UX Designer",
+        "Frontend Developer",
+        "Backend Developer",
+        "Database Architect",
+        "API Integrator",
+        "Full-Stack Web Developer"
+      ];
+
+      const typedText = document.querySelector(".typed-text");
+      const typingDelay = 100;
+      const erasingDelay = 80;
+      const newTextDelay = 3000;
+      let textIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textIndex].length) {
+          typedText.textContent += textArray[textIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          typedText.textContent = textArray[textIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          textIndex = (textIndex + 1) % textArray.length;
+          setTimeout(type, typingDelay);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (textArray.length) setTimeout(type, newTextDelay);
+      });
+
+      async function loadAvailability() {
+        const dot = document.getElementById('dot');
+        const statusText = document.getElementById('status-text');
+
+        function setUi(available) {
+          if (!dot || !statusText) return;
+          if (available) {
+            statusText.innerText = 'Available for work';
+            dot.classList.remove('unavailable');
+          } else {
+            statusText.innerText = 'Currently unavailable';
+            dot.classList.add('unavailable');
+          }
+        }
+
+        try {
+          if (window.getAvailabilityStatus) {
+            const available = await window.getAvailabilityStatus();
+            if (typeof available === 'boolean') {
+              setUi(available);
+              return;
+            }
+          }
+        } catch (_) {}
+
+        fetch('status.json')
+          .then(res => res.json())
+          .then(data => setUi(!!data.available))
+          .catch(() => {
+            if (statusText) statusText.innerText = 'Status unknown';
+          });
+      }
+
+      window.addEventListener('load', loadAvailability);
+      const items = document.querySelectorAll(".accordion-item");
+      let current = 0;
+      let interval;
+      let accordionInView = false;
+
+      function activateTab(index) {
+        items.forEach((item, i) => {
+          const bar = item.querySelector(".bar-fill");
+          const reveals = item.querySelectorAll('.reveal');
+
+          bar.style.transition = "none";
+          bar.style.width = "0%";
+          bar.offsetHeight;
+          bar.style.transition = "width 5.5s linear";
+
+          item.classList.remove("active");
+          // Reset child animations so they can re-trigger when the tab opens
+          reveals.forEach(r => r.classList.remove('reveal-visible'));
+
+          if (i === index) {
+            item.classList.add("active");
+            setTimeout(() => {
+              bar.style.width = "100%";
+              // Re-trigger child animations inside the newly active tab
+              reveals.forEach(r => r.classList.add('reveal-visible'));
+            }, 400); // Delay to match accordion content expansion
+          }
+        });
+      }
+
+      function startAutoCycle() {
+        clearInterval(interval);
+        if (!accordionInView || items.length <= 1) return;
+        interval = setInterval(() => {
+          current = (current + 1) % items.length;
+          activateTab(current);
+        }, 6000);
+      }
+
+      function stopAutoCycle() {
+        clearInterval(interval);
+        interval = null;
+      }
+
+      items.forEach((item, i) => {
+        item.addEventListener("click", () => {
+          current = i;
+          activateTab(i);
+          if (accordionInView) startAutoCycle();
+        });
+      });
+
+      activateTab(current);
+
+      // Only auto-cycle when the accordion is actually on-screen.
+      const accordionEl = document.querySelector(".accordion");
+      if (accordionEl && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver((entries) => {
+          const entry = entries[0];
+          accordionInView = !!(entry && entry.isIntersecting);
+          if (accordionInView) startAutoCycle();
+          else stopAutoCycle();
+        }, { threshold: 0.25 });
+        io.observe(accordionEl);
+      }
+
+    </script>
+
+    <div id="terminal-overlay">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <div class="control red"></div>
+          <div class="control yellow"></div>
+          <div class="control green" title="Close Terminal"></div>
+        </div>
+        <div class="terminal-title">hardikwahi@zsh — 80×24</div>
+        <div style="width: 44px;"></div>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-container"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/supabase-projects.js"></script>
+    <script src="js/supabase-status.js"></script>
+    <script src="js/load-projects.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/terminal.js"></script>
+    <script>
+      // Hero Monitor Log Animation
+      const monitorLogs = document.getElementById('monitor-logs');
+      const logLines = [
+        '[  OK  ] Initializing WahiOS Kernel...',
+        '[  OK  ] Mounting /dev/sdA1...',
+        '[ INFO ] establishing neural bridge...',
+        '[ WARN ] system latency detected: 2ms',
+        '[  OK  ] starting ZSH-Hybrid shell...',
+        'hardikwahi@portfolio:~$ neofetch',
+        'OS: WahiOS v11.0 (Pro)',
+        'Shell: zsh 5.9',
+        'Uptime: 100% stable',
+        'CPU: JS-Runtime-V8',
+        'Memory: 32GB (Virtual)',
+        'hardikwahi@portfolio:~$ ls projects',
+        'avadh-bizzhub/  portfolio-v1/  ai-shell/',
+        '[ INFO ] Listening on port 8080...',
+        '[  OK  ] Security module active',
+        '[ INFO ] awaiting user interaction...',
+        '-----------------------------------',
+        '>> System Operational <<'
+      ];
+
+      let logIdx = 0;
+      function addLog() {
+        if (!monitorLogs) return;
+        const line = document.createElement('div');
+        line.style.marginBottom = '4px';
+        line.style.opacity = '0';
+        line.style.transform = 'translateY(5px)';
+        line.style.transition = 'all 0.3s ease';
+        line.innerHTML = `<span style="color: #9ece6a;">></span> ${logLines[logIdx % logLines.length]}`;
+
+        monitorLogs.appendChild(line);
+
+        // Trigger animation
+        setTimeout(() => {
+          line.style.opacity = '1';
+          line.style.transform = 'translateY(0)';
+        }, 50);
+
+        if (monitorLogs.childNodes.length > 12) {
+          monitorLogs.removeChild(monitorLogs.firstChild);
+        }
+
+        monitorLogs.scrollTop = monitorLogs.scrollHeight;
+        logIdx++;
+        setTimeout(addLog, Math.random() * 1000 + 500);
+      }
+
+      if (monitorLogs) addLog();
+    </script>
+    <script src="js/contact-final.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/why-scroll.js"></script>
+    <script src="js/faq.js"></script>
+</body>
+
+</html>
