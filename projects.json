@@ -1,0 +1,39 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Avadh Bizzhub",
+            "description": "Avadh Bizzhub is a modern commercial business hub designed to provide high-quality office and retail spaces for businesses operating in and around Vapi. The project focuses on creating a structured environment where entrepreneurs, professionals, and companies can establish their presence and expand their operations.\n\nThe complex typically includes commercial offices, showrooms, and business facilities that support a variety of industries such as IT services, consulting firms, trading companies, and startups. With contemporary infrastructure and a professional layout, Avadh Bizzhub aims to improve business productivity and networking opportunities among companies operating in the same space.\n\nDeveloped by the Avadh Group, which has built numerous residential and commercial projects across Gujarat, the hub represents the group\u2019s vision of creating modern business ecosystems. Its location in Vapi\u2014an important industrial and commercial city\u2014makes it particularly suitable for companies looking to connect with manufacturing industries, local enterprises, and regional markets.\n\nOverall, Avadh Bizzhub functions as a professional center where businesses can operate, collaborate, and grow within a well-structured commercial environment.",
+            "skills": [
+                "Commercial Hub",
+                "Office Spaces",
+                "Retail",
+                "Vapi, Gujarat"
+            ],
+            "image": "images/Screenshot_2026-03-06_193455_1772806033.png",
+            "link": "https://avadh7.vercel.app/",
+            "featured": true,
+            "rating": 4.8,
+            "reviewCount": 124,
+            "isVerified": true,
+            "location": "Vapi, Gujarat",
+            "category": "Commercial Real Estate",
+            "workingHours": "09:00 AM - 08:00 PM",
+            "contact": "+91 98765 43210",
+            "reviews": [
+                {
+                    "user": "Ankit Sharma",
+                    "rating": 5,
+                    "date": "Oct 12, 2025",
+                    "comment": "Best commercial space in Vapi. Excellent infrastructure and connectivity."
+                },
+                {
+                    "user": "Sneha Patel",
+                    "rating": 4,
+                    "date": "Nov 05, 2025",
+                    "comment": "Great facilities, though parking can be a bit crowded during peak hours."
+                }
+            ]
+        }
+    ]
+}

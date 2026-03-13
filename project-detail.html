@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_blank" />
+  <title>Project Details - Hardik Wahi</title>
+  <meta name="description"
+    content="View detailed information about projects developed by Hardik Wahi, including tech stack, features, and live links.">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <script src="js/favicon.js" defer></script>
+  <style>
+    /* Detail Page Specific Styles */
+    .detail-container {
+      max-width: 1000px;
+      margin: 120px auto 100px;
+      padding: 0 24px;
+    }
+
+    .detail-hero {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 60px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    }
+
+    .detail-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+    }
+
+    .detail-main h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #fff 30%, #94a3b8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .detail-description {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #aaa;
+      margin-bottom: 40px;
+      white-space: pre-wrap;
+    }
+
+    .detail-sidebar-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      padding: 32px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .sidebar-section {
+      margin-bottom: 32px;
+    }
+
+    .sidebar-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #64748b;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    .visit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: #fff;
+      color: #000;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .visit-btn:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+    }
+
+    .visit-btn i {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .detail-content {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-sidebar-card {
+        position: static;
+      }
+
+      .detail-main h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .loading-state {
+      text-align: center;
+      padding: 100px 0;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    /* Business Detail Enhancements */
+    .verified-badge {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(34, 197, 94, 0.9);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+
+    .rating-display {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .stars {
+      color: #fbbf24;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    .rating-value {
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .review-count {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .info-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .info-item i {
+      color: #6366f1;
+      font-size: 1.1rem;
+      margin-top: 3px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #64748b;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    .info-item span {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .reviews-section {
+      margin-top: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .reviews-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: #fff;
+    }
+
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .review-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .review-user {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .review-date {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    .review-stars {
+      color: #fbbf24;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      color: #94a3b8;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .contact-btn-sidebar:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .detail-container {
+        margin: 100px auto 80px;
+        padding: 0 16px;
+      }
+
+      .detail-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .detail-main h1 {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .detail-hero {
+        border-radius: 22px;
+      }
+
+      .detail-main h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="reveal-load">
+    <a href="index.html#top" class="nav-logo"><span class="logo-metallic">HMW7</span></a>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#top">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="nav-cta" href="index.html#contact" style="text-decoration:none;">Get a Quote</a>
+    </div>
+  </nav>
+
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="videos/background.mp4" type="video/mp4" />
+  </video>
+
+  <main class="detail-container" id="detailRoot">
+    <div class="loading-state">Loading project details...</div>
+  </main>
+
+  <!-- Back Section -->
+  <section class="projects-back-cta">
+    <a href="projects.html" class="back-home-btn">
+      <span class="btn-arrow-back">←</span>
+      Back to Projects
+    </a>
+  </section>
+
+  
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-metallic">HMW7</span></div>
+        <p class="footer-desc">Modern, responsive websites and full-stack web apps built with clean UI and fast performance.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-title">Pages</div>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="index.html#services" class="footer-link">Services</a>
+          <a href="projects.html" class="footer-link">Projects</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-title">Contact</div>
+          <a href="mailto:hwahi2178@gmail.com" class="footer-link">hwahi2178@gmail.com</a>
+          <a href="index.html#contact" class="footer-link">Start a project</a>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <div class="footer-title">Elsewhere</div>
+        <div class="footer-social-row">
+          <a href="https://github.com/HardikWahi07" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/hardikwahi/" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://x.com/HardikWahi07" class="social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hwahi07/" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="footer-meta">� <span data-footer-year></span> HMW7. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/supabase-projects.js"></script>
+<script src="js/transitions.js"></script>
+  <script src="js/footer.js"></script>
+  <script>
+    // Nav Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    }
+
+    // Dynamic Loader
+    async function loadProjectDetail() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = parseInt(urlParams.get('id'));
+      const container = document.getElementById('detailRoot');
+
+      if (!projectId) {
+        window.location.href = 'projects.html';
+        return;
+      }
+
+      try {
+        const project = await window.getProjectById(projectId);
+
+        if (!project) {
+          container.innerHTML = '<div class="loading-state">Project not found.</div>';
+          return;
+        }
+
+        document.title = `${project.title} - Project Details`;
+
+        container.innerHTML = `
+          <div class="detail-hero reveal reveal-up">
+            <img src="${project.image}" alt="${project.title}">
+            ${project.isVerified ? `<div class="verified-badge"><i class="fas fa-check-circle"></i> Verified Business</div>` : ''}
+          </div>
+          <div class="detail-content">
+            <div class="detail-main reveal reveal-left">
+              <div class="title-row">
+                <h1>${project.title}</h1>
+              </div>
+              
+              ${project.rating ? `
+                <div class="rating-display">
+                  <div class="stars">
+                    ${'★'.repeat(Math.floor(project.rating))}${'☆'.repeat(5 - Math.floor(project.rating))}
+                  </div>
+                  <span class="rating-value">${project.rating}</span>
+                  <span class="review-count">(${project.reviewCount} Reviews)</span>
+                </div>
+              ` : ''}
+
+              <div class="detail-description">${project.description || 'No description provided for this project yet.'}</div>
+              
+              ${project.reviews && project.reviews.length > 0 ? `
+                <div class="reviews-section">
+                  <h2>Customer Reviews</h2>
+                  <div class="reviews-list">
+                    ${project.reviews.map(review => `
+                      <div class="review-item">
+                        <div class="review-header">
+                          <span class="review-user">${review.user}</span>
+                          <span class="review-date">${review.date}</span>
+                        </div>
+                        <div class="review-stars">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+                        <p class="review-text">${review.comment}</p>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+            </div>
+
+            <div class="detail-sidebar reveal reveal-right">
+                <div class="detail-sidebar-card">
+                <div class="sidebar-section">
+                  <span class="sidebar-label">Tags & Skills</span>
+                  <div class="skills-list">
+                    ${(project.skills || []).map(skill => `<span class="skill-tag">${skill}</span>`).join('') || '<span class="skill-tag">General Development</span>'}
+                  </div>
+                </div>
+
+                ${project.link && project.link !== '#' ? `
+                  <a href="${project.link}" target="_blank" class="visit-btn">
+                    Visit Official Site <i class="fas fa-external-link-alt"></i>
+                  </a>
+                ` : ''}
+                
+                ${project.contact ? `
+                  <a href="tel:${project.contact.replace(/\s+/g, '')}" class="contact-btn-sidebar" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 16px; background: rgba(255,255,255,0.05); color: #fff; border-radius: 14px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;">
+                    <i class="fas fa-phone"></i> Call Now
+                  </a>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Trigger reveal animations if transitions.js doesn't do it automatically for dynamic content
+        if (window.initScrollReveal) window.initScrollReveal();
+
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = '<div class="loading-state">Error loading project data.</div>';
+      }
+    }
+
+    loadProjectDetail();
+  </script>
+</body>
+
+</html>

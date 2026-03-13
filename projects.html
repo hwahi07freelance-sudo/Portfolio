@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base target="_blank" />
+    <title>All Projects - Hardik Wahi</title>
+    <meta name="description"
+        content="Explore all web design and development projects by Hardik Wahi. From portfolios to complex web applications.">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <script src="js/favicon.js" defer></script>
+</head>
+
+<body>
+    <nav class="reveal-load">
+        <a href="index.html#top" class="nav-logo"><span class="logo-metallic">HMW7</span></a>
+        <div class="nav-toggle" id="navToggle" aria-label="Open Menu" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#top">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="index.html#contact">Contact</a>
+            <a class="nav-cta" href="index.html#contact" style="text-decoration:none;">Get a Quote</a>
+        </div>
+    </nav>
+
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="videos/background.mp4" type="video/mp4" />
+    </video>
+
+    <section class="projects-hero">
+        <div class="projects-hero-content reveal-load">
+            <div class="badge">
+                <span class="badge-icon">🗂️</span>
+                All Projects
+            </div>
+            <h1 class="projects-hero-title">My <span class="text-muted-project">Projects</span></h1>
+            <p class="projects-hero-desc">Every project is a story of creativity, engineering, and problem-solving.
+                Explore the full collection.</p>
+        </div>
+    </section>
+
+    <!-- Projects Grid — Dynamically loaded from Supabase -->
+    <div class="thebestprojects" style="background: transparent;">
+        <div class="project-grid reveal reveal-up" id="all-projects-grid">
+            <!-- Dynamically loaded from Supabase -->
+        </div>
+    </div>
+
+    <!-- Back to Home -->
+    <section class="projects-back-cta reveal reveal-up">
+        <a href="index.html" class="back-home-btn">
+            <span class="btn-arrow-back">←</span>
+            Back to Home
+        </a>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo"><span class="logo-metallic">HMW7</span></div>
+                <p class="footer-desc">Modern, responsive websites and full-stack web apps built with clean UI and fast performance.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-col">
+                    <div class="footer-title">Pages</div>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="index.html#services" class="footer-link">Services</a>
+                    <a href="projects.html" class="footer-link">Projects</a>
+                    <a href="index.html#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">Contact</div>
+                    <a href="mailto:hwahi2178@gmail.com" class="footer-link">hwahi2178@gmail.com</a>
+                    <a href="index.html#contact" class="footer-link">Start a project</a>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <div class="footer-title">Elsewhere</div>
+                <div class="footer-social-row">
+                    <a href="https://github.com/HardikWahi07" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/hardikwahi/" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://x.com/HardikWahi07" class="social-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/hwahi07/" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="footer-meta">� <span data-footer-year></span> HMW7. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- Custom cursor -->
+    <div class="circle">
+        <div class="circle-text">View Project</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/supabase-projects.js"></script>
+    <script src="js/load-projects.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        // Nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+            navLinks.querySelectorAll('a, button').forEach(link =>
+                link.addEventListener('click', () => navLinks.classList.remove('open'))
+            );
+            window.addEventListener('click', (e) => {
+                if (!navToggle.contains(e.target) && !navLinks.contains(e.target))
+                    navLinks.classList.remove('open');
+            });
+        }
+
+        // Custom cursor (desktop only)
+        const circle = document.querySelector(".circle");
+        const cursorEnabled = !!(window.matchMedia && window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 1025px)').matches);
+
+        if (circle && cursorEnabled) {
+            let mouseX = 0, mouseY = 0;
+            let dotX = 0, dotY = 0;
+
+            window.addEventListener("mousemove", (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animate() {
+                dotX += (mouseX - dotX) * 0.15;
+                dotY += (mouseY - dotY) * 0.15;
+                circle.style.left = dotX + "px";
+                circle.style.top = dotY + "px";
+                requestAnimationFrame(animate);
+            }
+            animate();
+        } else if (circle) {
+            circle.style.display = 'none';
+        }
+
+        // Note: Tile hover effects are now handled in js/load-projects.js to support dynamic content.
+    </script>
+</body>
+
+</html>

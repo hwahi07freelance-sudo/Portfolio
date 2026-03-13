@@ -1,0 +1,323 @@
+/* Computer Graphic & Terminal Styles */
+
+/* Computer Graphic in Hero */
+.computer-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.computer-container:hover {
+  transform: scale(1.05) rotateY(-5deg);
+}
+
+.computer {
+  position: relative;
+  width: min(320px, 86vw);
+  aspect-ratio: 4 / 3;
+  height: auto;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 12px solid #2a2a2a;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.computer:hover {
+  border-color: #333;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(0, 255, 0, 0.1);
+}
+
+/* Screen bezel details */
+.computer::before {
+  content: '';
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 35px;
+  background: #2a2a2a;
+  z-index: -1;
+}
+
+/* Stand Base */
+.computer-stand {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 10px;
+  background: #333;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Monitor bottom bar */
+.computer-bottom-bar {
+  height: 20px;
+  background: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #333;
+}
+
+.power-led {
+  width: 4px;
+  height: 4px;
+  background: #0f0;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #0f0;
+  position: absolute;
+  right: 15px;
+  bottom: 8px;
+}
+
+.screen {
+  flex: 1;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 40%);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+.monitor-logs {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  color: #9ece6a;
+  font-family: 'Fira Code', monospace;
+  font-size: 8px;
+  line-height: 1.4;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  text-shadow: 0 0 5px rgba(158, 206, 106, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.glitch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 0, 0.05);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.computer:hover .glitch-overlay {
+  animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    opacity: 0.2;
+    transform: translate(0);
+  }
+
+  20% {
+    opacity: 0.4;
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    opacity: 0.2;
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    opacity: 0.4;
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    opacity: 0.2;
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: translate(0);
+  }
+}
+
+/* Terminal Overlay */
+#terminal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #1a1b26;
+  color: #a9b1d6;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  z-index: 99999;
+  display: none;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#terminal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  background: #16161e;
+  padding: 10px 20px;
+  border-bottom: 1px solid #292e42;
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background: #ff5f56;
+}
+
+.yellow {
+  background: #ffbd2e;
+}
+
+.green {
+  background: #27c93f;
+  cursor: pointer;
+}
+
+.terminal-body {
+  flex: 1;
+  position: relative;
+  background: #1a1b26;
+}
+
+#terminal-container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+/* Xterm.js overrides */
+.xterm .xterm-viewport {
+  background-color: transparent !important;
+}
+
+/* Custom Scrollbar for Terminal */
+#terminal-overlay::-webkit-scrollbar {
+  width: 8px;
+}
+
+#terminal-overlay::-webkit-scrollbar-track {
+  background: #111;
+}
+
+#terminal-overlay::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+#terminal-overlay::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Responsive Terminal & Computer */
+@media (max-width: 768px) {
+  .computer {
+    width: 250px !important;
+    height: 190px !important;
+    border-width: 8px !important;
+  }
+
+  .computer-stand {
+    width: 100px !important;
+  }
+
+  #terminal-overlay {
+    padding: 10px;
+  }
+
+  .terminal-body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .computer {
+    width: 200px !important;
+    height: 150px !important;
+    border-width: 6px !important;
+  }
+
+  .terminal-body {
+    font-size: 12px;
+  }
+
+  .prompt {
+    font-size: 11px;
+  }
+}

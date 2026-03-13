@@ -1,0 +1,87 @@
+/* ===== PROJECTS PAGE STYLES ===== */
+
+/* Hero */
+.projects-hero {
+    padding-top: 160px;
+    padding-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.projects-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.projects-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin-top: 18px;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+}
+
+.projects-hero-desc {
+    color: #888;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Back CTA */
+.projects-back-cta {
+    text-align: center;
+    padding: 60px 20px 100px;
+}
+
+.back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 32px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-arrow-back {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.back-home-btn:hover .btn-arrow-back {
+    transform: translateX(-4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .projects-hero {
+        padding-top: 120px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-hero-title {
+        font-size: 2rem;
+    }
+}
