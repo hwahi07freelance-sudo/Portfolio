@@ -2141,6 +2141,21 @@ a.buttonsahur2 {
   transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
+/* Prevent white-on-white text in native select dropdowns on some browsers/OS themes */
+select.contact-input {
+  color-scheme: dark;
+}
+
+select.contact-input option,
+select.contact-input optgroup {
+  background-color: #17181A;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+select.contact-input option:disabled {
+  color: rgba(255, 255, 255, 0.65);
+}
+
 .contact-input::placeholder {
   color: rgba(255, 255, 255, 0.45);
 }
