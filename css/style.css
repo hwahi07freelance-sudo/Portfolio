@@ -404,6 +404,16 @@ nav {
 .badge-icon {
   margin-right: 8px;
   font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.bw-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  flex: 0 0 auto;
 }
 
 .tcontainer {
@@ -579,12 +589,12 @@ a.buttonsahur2 {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   width: auto;
   margin: 80px var(--page-pad) 0 var(--page-pad);
 }
 
-.project-tile1 {
+.project-tile1{
   position: relative;
   border-radius: 24px;
   overflow: hidden;
@@ -592,12 +602,26 @@ a.buttonsahur2 {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
   cursor: pointer;
   height: 25rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
+.project-tile2 {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  height: 22rem;
+  margin-bottom: 30px;
+  display: block;
+  transition: transform 1s ease-in-out;
+}
 
 .project-tile1 img,
 .project-tile2 img {
@@ -606,7 +630,7 @@ a.buttonsahur2 {
   display: block;
   border-radius: 24px;
   padding: 20px;
-  transition: transform 0.5s ease, opacity 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .project-info-overlay {
@@ -631,8 +655,13 @@ a.buttonsahur2 {
 }
 
 .project-tile1:hover img,
-.project-tile2:hover img {
-  transform: scale(1.05);
+.project-tile2:hover img{
+  transform: scale(1.02);
+}
+
+.project-tile1:hover,
+.project-tile2:hover{
+  transform: scale(1.02);
 }
 
 .project-info-overlay h3 {
